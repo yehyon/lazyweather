@@ -1,0 +1,26 @@
+// General Utilities Functions
+
+@function pow($x, $y) {
+  $ret: 1;
+
+  @if $y > 0 {
+    @for $i from 1 through $y {
+        $ret: $ret * $x;
+    }
+  } 
+
+  @else {
+    @for $i from $y to 0 {
+        $ret: $ret / $x;
+    }
+  }
+
+  @return $ret;
+}
+
+
+// Breakpoint Functions
+
+@function get-breakpoint-property($prop, $bp) {
+  @return map-get(map-get($bp-sizes, $bp), $prop);
+}

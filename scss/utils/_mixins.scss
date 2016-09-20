@@ -1,0 +1,29 @@
+//Breakpoint Mixins
+
+@mixin breakpoint($name) {
+  @if map-get($breakpoints, $name) == '' {
+    @content;
+  } @else {
+    @media (min-width: map-get($breakpoints, $name)) {
+    @content;
+    }
+  }
+}
+
+// Typography Mixins
+
+@mixin generate-font-properties($label, $base-font-size, $base-line-height, $scale) {
+  $scale-value: index($headings, $label) - 1;
+
+  $fs: $base-font-size * pow($scale, $scale-value);
+  $lh: null;
+
+  @if $fs == $base-font-size {
+    $lh: 24px;
+  } @else {
+    $lh: round($fs / 6) * 8;
+  }
+
+  font-size: $fs;
+  line-height: $lh;
+}

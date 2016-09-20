@@ -1,0 +1,145 @@
+.panel
+  width: 100vw
+  opacity: 0.94
+  background: #FFFFFF
+  box-shadow: 0px -3px 5px 0px rgba(27,52,63,0.17)
+  position: absolute
+  top: 580px
+  overflow: hidden
+  height: 91%
+  transition: all .5s ease
+  &.scrolling .ion-ios-arrow-up,
+  &.change-height .ion-ios-arrow-up
+      transform: rotate(180deg)
+      transition: all .3s linear
+  +mq(md)
+    top: 512px
+  +mq(sm)
+    top: 401px
+    height: 91%
+
+.change-height
+  top: 55px
+  transition: all .5s ease
+
+.second-main
+  height: 100vh
+
+
+.arrow-up
+  display: flex
+  justify-content: center
+  font-size: 20px
+  height: 16px
+  margin-top: 8px
+  +mq(md)
+    font-size: 18px
+  +mq(sm)
+    font-size: 16px
+
+.table
+  width: 100%
+
+.position
+  height: 65vh
+  margin:
+    top: $baseline * 15
+    bottom: $baseline * 2
+  +mq(md)
+    margin-top: $baseline * 14
+    padding-bottom: $baseline * 2
+  +mq(sm)
+    margin-top: $baseline * 15
+    padding-bottom: $baseline * 1
+
+
+
+.tweather-label
+  border-bottom: 1px solid $light-gray
+  padding-bottom: $baseline * 2
+  display: flex
+  flex-flow: row
+  justify-content: space-between
+  margin:
+    left: $gutter + $column
+    right: $gutter + $column
+    top: $baseline * 10
+  background: $white
+  opacity: 1
+  +mq(md)
+    margin-top: $baseline * 10
+    padding-bottom: $baseline * 2
+  +mq(sm)
+    margin-top: $baseline * 11
+    padding-bottom: $baseline * 1
+
+
+.tweather-content
+  display: flex
+  flex-flow: row
+  justify-content: space-between
+  margin:
+    top: $baseline * 3
+    left: $gutter + $column
+    right: $gutter + $column
+  +mq(md)
+    margin-top: $baseline * 3
+  +mq(sm)
+    margin-top: $baseline * 2
+
+
+.wweather-content
+  display: flex
+  flex-flow: row
+  justify-content: space-between
+  margin:
+    top: $baseline * 3
+    left: $gutter + $column
+    right: $gutter + $column
+  +mq(md)
+    margin-top: $baseline * 3
+  +mq(sm)
+    margin-top: $baseline * 2
+
+.tabs
+  padding:
+    left: $gutter + $column
+    right: $gutter + $column
+  a
+    width: $gutter * 5 + $column * 5
+    font-weight: 200
+
+.tab-item
+  width: $gutter * 5 + $column * 5
+  max-width: $gutter * 5 + $column * 5
+  h3
+    line-height: 64px
+    font-weight: inherit
+
+
+ion-slide
+  height: 100vh
+
+.bar
+  padding:
+    left: $gutter + $column
+    right: $gutter + $column
+  h1
+    position: absolute
+    top: 0
+    vertical-align: baseline
+    font-size: 15px
+    text-align: left
+    left: 48px
+    line-height: 44px
+    color: $white
+    font-weight: $medium
+  i.icon
+    position: absolute
+    top: 2px
+    height: 43px
+    line-height: 44px
+    font-size: 16px
+
+.ion-ios-arrow-up
+  transition: all .3s linear

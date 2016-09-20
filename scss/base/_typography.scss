@@ -1,0 +1,114 @@
+// Font Link
+
+@font-face {
+  font-family: WeatherAndTime;
+  src: url(../font/weatherandtime/Weather&Time.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../font/muli/muli200.woff) format('woff')
+  }
+
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/muli/muli400.woff) format('woff')
+  }
+
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../font/muli/muli600.woff) format('woff')
+  }
+
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../font/muli/muli700.woff) format('woff')
+  }
+
+%muli-light {
+  font-family: 'Muli', sans-serif;
+  font-weight: $light;
+}
+
+%muli-medium {
+  font-family: 'Muli', sans-serif;
+  font-weight: $medium;
+}
+
+%muli-heavy {
+  font-family: 'Muli', sans-serif;
+  font-weight: 600;
+}
+
+%muli-black {
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+}
+
+
+
+h1 {
+  @extend %muli-light;
+}
+
+h2 {
+  @extend %muli-light;
+}
+
+h3 {
+  @extend %muli-light;
+}
+
+h4 {
+  @extend %muli-light;
+}
+
+$bp-sizes: (
+  xs: (
+    base-font-size: 15 * ( 320 / 414 ) * 1px,
+    base-line-height: 1.5,
+    scale: 1.5
+  ),
+  s: (
+    base-font-size: 15 * ( 375 / 414 ) * 1px,
+    base-line-height: 1.5,
+    scale: 1.5
+  ),
+  m: (
+    base-font-size: 15px, 
+    base-line-height: 1.5,
+    scale: 1.5
+  )
+);
+
+$headings: ( h4, h3, h2, h1);
+
+
+@each $size, $data in $bp-sizes {
+
+  $bsf: get-breakpoint-property(base-font-size, $size);
+  $blh: get-breakpoint-property(base-line-height, $size);
+  $s: get-breakpoint-property(scale, $size);
+
+  @include breakpoint($size) {
+    @each $label in $headings {
+      #{$label} {
+        @include generate-font-properties($label, $bsf, $blh, $s);
+      } 
+    }
+  }
+}
+
+
+
+
+
+

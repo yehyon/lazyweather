@@ -1,0 +1,12 @@
+{
+  "name": "lazyWeather",
+  "app_id": "fe164176",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

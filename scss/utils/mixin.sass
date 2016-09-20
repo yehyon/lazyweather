@@ -1,0 +1,15 @@
+$mq-sm: "(max-width: 320px)"
+$mq-md: "(min-width: 320px) and (max-width: 375px)"
+$mq-lg: "(min-width: 375px)"
+
+//Media Query
+=mq($breakpoint) 
+  @if $breakpoint == sm
+    @media #{$mq-sm} 
+      @content 
+  @else if $breakpoint == md 
+    @media #{$mq-md} 
+      @content
+  @else if $breakpoint == lg 
+    @media #{$mq-lg}  
+      @content 

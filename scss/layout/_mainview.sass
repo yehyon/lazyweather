@@ -1,0 +1,63 @@
+.mainview
+  margin:
+    left: $gutter + $column
+    right: $gutter + $column
+  position: fixed
+
+.bar .header-title
+  font-size: 10px
+  line-height: 44px
+  text-align: center
+  color: $dark
+  font-weight: 700
+
+h5 
+  font-family: WeatherAndTime
+  font-size: 28px
+  margin-top: 6px
+  +mq(md)
+    font-size: 28 * ( 375 / 414 ) * 1px
+    margin-top: 4px
+  +mq(sm)
+    font-size: 28 * ( 320 / 414 ) * 1px
+    margin-top: 4px
+
+
+
+.location
+  margin:
+    top: $baseline * 3
+  h3
+    @extend %muli-medium
+  +mq(sm)
+    top: $baseline * 2
+  +mq(md)
+    top: $baseline * 2
+
+main
+  margin:
+    top: $baseline * 16
+
+
+.left-side
+  float: left
+
+.current-temperature
+  display: flex
+  flex-flow: row
+  margin:
+    top: $baseline
+  h5
+    margin:
+      left: $gutter * 2
+      right: $column
+  h3
+    white-space: nowrap
+
+.right-side
+  float: right
+
+.temperature-hi-lo
+  text-align: right
+  h3
+    margin-top: $baseline
