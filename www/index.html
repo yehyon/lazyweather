@@ -48,15 +48,16 @@
   <body ng-app="lazy-weather" ng-controller="main" ng-init="getTasks()">
 
     <ion-pane>
-      <ion-header-bar class="bar bar-light">
+      <ion-header-bar class="bar bar-stable">
         <!-- <i class="icon ion-ios-location-outline"></i> -->
-        <h1 class="header-title title">L A Z Y  W E A T H E R</h1>
+        <h1 style="color: #387ef5;" class="header-title title">L A Z Y  W E A T H E R</h1>
       </ion-header-bar>
-      <ion-content>
+      <ion-content class="top-container">
       <canvas class="canvas" id="rain"> </canvas>
         <div class="mainview" data-ng-controller="CurrentWthController as lazyWeatherCtrl">
           <header>
             <div class="location">
+              <!-- <i class="icon ion-ios-location-outline"></i> -->
               <h3>Seoul, Korea</h3>
             </div>
             <div class="second-group">
@@ -86,7 +87,7 @@
       <ion-content class="second-main" data-ng-controller="SlideCtrl">
       <div class="panel">
         <div class="arrow-up"><i class="icon ion-ios-arrow-up"></i></div>
-        <div style="top: 0;" class="tabs-striped tabs-background-light tabs-color-dark">
+        <div style="top: 0;" class="tabs-striped tabs-background-light tabs-color-positive">
           <div style="top: 24px;" class="tabs">
             <a class="tab-item button-clear ng-class:{'active': galleryClassActive}" data-ng-click="changeSlideOnClick('home-slide-box')"><h3>Daily</h3></a>
             <a class="tab-item button-clear ng-class:{'active': offerClassActive}" data-ng-click="changeSlideOnClick('home-slide-box')"><h3>Week</h3></a>
@@ -96,19 +97,20 @@
           <ion-slide>
             <div class="today-weather-table table">
               <div class="tweather-label">
-                <h4>Time</h4>
-                <h4>Forcast</h4>
-                <h4>Temperature</h4>
+                <h4 class="table-date">Time</h4>
+                <h4 class="table-icon">Forcast</h4>
+                <h4 class="table-temp">°C</h4>
               </div>
               <ion-content class="position">
                 <div data-ng-controller="TodayWthController as todayWeatherCtrl">
                   <ul>
                     <li class="tweather-content" data-ng-repeat="(index, obj) in todayWeatherCtrl.todayWeather.list">
-                      <div><h4>{{obj.dt.yyyy_mm_dd | date:'MMM dd'}} {{ obj.dt.time | date: "hh"}}</h4></div>
-                      <div><h5>{{obj.weather[0].main.weathericon}}</h5></div>
-                      <div><h4>{{obj.main.temp| number:1}}°c</h4></div>
+                      <div class="table-date"><h4>{{obj.dt.yyyy_mm_dd | date:'MMM dd'}} {{ obj.dt.time | date: "hh"}}</h4></div>
+                      <div class="table-icon"><h5>{{obj.weather[0].main.weathericon}}</h5></div>
+                      <div class="table-temp"><h4>{{obj.main.temp| number:1}}°c</h4></div>
                     </li>
                   </ul>
+                  <div class="filler"></div>
                 </div>
               </ion-content>
             </div>
@@ -116,17 +118,17 @@
           <ion-slide>
             <div class="week-weather-table table">
               <div class="tweather-label">
-                <h4>Time</h4>
-                <h4>Forcast</h4>
-                <h4>Temperature</h4>
+                <h4 class="table-date">Time</h4>
+                <h4 class="table-icon">Forcast</h4>
+                <h4 class="table-temp">°C</h4>
               </div>
               <ion-content class="position">
                 <div data-ng-controller="WeekWthController as weekWeatherCtrl">
                   <ul>
                     <li class="wweather-content" data-ng-repeat="(index, obj) in weekWeatherCtrl.weekWeather.list">
-                      <div><h4>{{ obj.dt.yyyy_mm_dd | date:'MMM dd'}}, {{obj.dt.day}}</h4></div>
-                      <div><h5>{{obj.weather[0].main.weathericon}}</h5></div>
-                      <div><h4>{{obj.temp.day| number:1 }}°c</h4></div>
+                      <div class="table-date"><h4>{{ obj.dt.yyyy_mm_dd | date:'MMM dd'}}, {{obj.dt.day}}</h4></div>
+                      <div class="table-icon"><h5>{{obj.weather[0].main.weathericon}}</h5></div>
+                      <div class="table-temp"><h4>{{obj.temp.day| number:1 }}°c</h4></div>
                     </li>
                   </ul>
                 </div>

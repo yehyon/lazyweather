@@ -10,7 +10,7 @@
 
     $http({
       'method': 'GET',
-      'url': 'http://api.openweathermap.org/data/2.5/forecast?id=1835848&units=metric&APPID=b87a29cdc2db8cd57d8d8c85ca8c4fd8'
+      'url': 'http://api.openweathermap.org/data/2.5/forecast?q=Seoul&units=metric&APPID=b87a29cdc2db8cd57d8d8c85ca8c4fd8'
     }).then(successAjax, errorAjax);
     function successAjax(response) {
       lazyWeatherToday.todayWeather = response.data;

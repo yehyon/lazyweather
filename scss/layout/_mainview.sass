@@ -1,3 +1,6 @@
+.top-container
+  background-color: #F5F7F8
+
 .mainview
   margin:
     left: $gutter + $column
@@ -22,12 +25,31 @@ h5
     font-size: 28 * ( 320 / 414 ) * 1px
     margin-top: 4px
 
+.ion-ios-location-outline
+  color: $dark
+  line-height: 24px
+  font-size: 22.5px
+  line-height: 32px
+  margin:
+    right: $gutter * 2
+    top: 2px
+  +mq(md)
+    font-size: 20.38043px
+    line-height: 24px
+    margin-top: 3px
+  +mq(sm)
+    font-size: 17.3913px
+    line-height: 24px
+    margin-top: 1px
 
 
 .location
   margin:
     top: $baseline * 3
+  display: flex
+  flex-direction: row
   h3
+    // color: $positive
     @extend %muli-medium
   +mq(sm)
     top: $baseline * 2
@@ -36,7 +58,9 @@ h5
 
 main
   margin:
-    top: $baseline * 16
+    top: 50%
+  h2
+    color: $darker
 
 
 .left-side
@@ -50,7 +74,7 @@ main
   h5
     margin:
       left: $gutter * 2
-      right: $column
+      right: $gutter * 3
   h3
     white-space: nowrap
 

@@ -16,8 +16,22 @@ window.requestAnimFrame =
 
 var canvas = document.getElementById('rain');
 var ctx = canvas.getContext('2d');
+
+var w = window.innerWidth
+
+if (w <= 320) {
+  console.log('this is an iphone 5');
+  canvas.height = 373;
+} else if ( w > 310 && w <= 375) {
+  console.log('this is an iphone 6');
+  canvas.height = 392;
+} else if ( w > 375 && w <= 414) {
+  console.log('this is an iphone 6plus');
+  canvas.height = 403;
+};
+
 // canvas.width = 800;
-// canvas.height = 360;
+// canvas.height = 399;
 
 
 //--------------------------------------------
@@ -152,7 +166,7 @@ function update() {
 
 function init() {
 
-  ctx.lineWidth = 1;
+  ctx.lineWidth = 2;
   ctx.strokeStyle = 'rgba(60,135,235,1)';
   ctx.fillStyle = 'rgba(60,135,235,1)';
 

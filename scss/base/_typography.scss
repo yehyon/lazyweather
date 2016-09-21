@@ -57,18 +57,26 @@
 
 h1 {
   @extend %muli-light;
+  color: $dark;
 }
 
 h2 {
   @extend %muli-light;
+  color: $dark;
 }
 
 h3 {
   @extend %muli-light;
+  color: $dark;
 }
 
 h4 {
   @extend %muli-light;
+  color: $dark;
+}
+
+h5 {
+  color: $dark;
 }
 
 $bp-sizes: (
