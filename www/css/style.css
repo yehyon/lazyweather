@@ -15,9 +15,9 @@
 
 .tab-item {
   max-height: 100%;
-  max-width: 41.25%;
+/*  max-width: 41.25%;
   width: 41.25%;
-}
+*/}
 
 .scroll {
   height: 100vh;

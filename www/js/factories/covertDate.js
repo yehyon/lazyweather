@@ -17,9 +17,9 @@
       dd = dd > 10 ? dd : '0' + dd;
       var day = week[ d.getDay() ] + 'day';
       var hour = d.getHours();
-      hour = hour > 10 ? hour : '0' + hour;
+      hour = hour >= 10 ? hour : '0' + hour;
       var minute = d.getMinutes();
-      minute = minute > 10 ? minute : '0' + minute;
+      minute = minute >= 10 ? minute : '0' + minute;
 
 
       return {
